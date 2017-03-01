@@ -1,0 +1,160 @@
+
+<!-- <div class="div-container"> -->
+
+<!-- {{some_variable}} -->
+
+<div class="container div-container">
+
+<h4 style="color: #156687"><Strong>Distribution Demo Data Control</Strong></h4>
+<!-- <spinner name="booksSpinner" img-src="spinner.gif"></spinner> -->
+<div class="table-responsive col-md-5 div-container-2">
+  <!-- <p style="color: #156687"><Strong>Data Stats</Strong> as of 09/28/15 12:00</p> -->
+  <p style="color: #156687"><Strong>Data Stats</Strong> as of {{data_stats_date | date:'MM/dd/yy HH:mm'}}</p>
+  <table class="table table-bordered differentTable">
+    <thead>
+      <tr>
+        <th class="col-md-1" style="word-wrap: break-word;min-width: 100px;max-width: 100px;">Data Start</th>
+        <th class="col-md-2" style="word-wrap: break-word;min-width: 100px;max-width: 100px;">Data Stop</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-md-2">{{data_start | date:'MM/dd/yy'}}</td>
+        <td class="col-md-2">{{data_stop | date:'MM/dd/yy'}}</td>
+        <!-- <td class="col-md-1">09/28/15</td>
+        <td class="col-md-2">09/28/15</td> -->
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <table class="table table-bordered " align="center">
+    <thead>
+      <tr>
+        <th class="col-md-1">Entity</th>
+        <th class="col-md-2">Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-md-1">Meters</td>
+        <td class="col-md-2">{{meter}}</td>
+      </tr>
+      <tr>
+        <td class="col-md-1">Transformers</td>
+        <td class="col-md-2">N/A</td>
+      </tr>
+      <tr>
+        <td class="col-md-1">Feeders</td>
+        <td class="col-md-2">{{feeder}}</td>
+      </tr>
+      <tr>
+        <td class="col-md-1">Substations</td>
+        <td class="col-md-2">{{substraction}}</td>
+      </tr>
+      <tr>
+        <td class="col-md-1">Areas</td>
+        <td class="col-md-2">{{area}}</td>
+      </tr>
+      <tr>
+        <td class="col-md-1">Collectors</td>
+        <td class="col-md-2">{{collectors}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+</div>
+
+<div class="table-responsive differentTable col-md-7">
+  <div class="div-container-3">
+  <p style="color: #156687"><Strong>Process Stats</Strong></p>
+  <table class="table table-bordered differentTable">
+    <thead>
+      <tr>
+        <th class="col-md-1">Item</th>
+        <th class="col-md-2">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-md-1">Current Scenario</td>
+        <td class="col-md-2">{{current_scenario}}</td>
+      </tr>
+      <tr>
+        <td class="col-md-1" style="word-wrap: break-word;min-width: 150px;max-width: 150px;">Scenario Date Time</td>
+        <!-- <td class="col-md-2">09/28/15 12:00</td> -->
+        <td class="col-md-2">{{scenario_time | date:'MM/dd/yy HH:mm'}}</td>
+      </tr>
+      <tr>
+        <td class="col-md-1" style="word-wrap: break-word;min-width: 140px;max-width: 140px;">Data Update Time</td>
+        <!-- <td class="col-md-2">09/28/15 12:00</td> -->
+        <td class="col-md-2">{{data_update_time | date:'MM/dd/yy HH:mm'}}</td>
+      </tr>
+      </tbody>
+  </table>
+</div>
+<br/>
+  <table class="table table-not-bordered" style="padding-left: 0px">
+    <tr>
+      <td class="custom-td" style="text-align: left, padding-left: 0px">
+        <div class="div-container">
+
+
+        <p><Strong style="margin-left: 10px;">Scenarios</Strong></p>
+
+
+  <div class="input-group input-group-padding">
+    <label style="font-weight: normal; word-wrap: break-word;min-width: 140px;max-width: 140px;">
+        <input type="radio" ng-model="scenario" ng-change='changeScenario()' value="2" />
+        Base
+    </label>
+    <br>
+    <label style="font-weight: normal; word-wrap: break-word;min-width: 140px;max-width: 140px;">
+        <input type="radio" ng-model="scenario" ng-change='changeScenario()' value="3" />
+        Poor Comms
+    </label>
+    <br>
+    <label style="font-weight: normal; word-wrap: break-word;min-width: 140px;max-width: 140px;">
+        <input type="radio" ng-model="scenario" ng-change='changeScenario()' value="4" />
+        Collector Failed
+    </label>
+    <br>
+    <label style="font-weight: normal; word-wrap: break-word;min-width: 140px;max-width: 140px;">
+        <input type="radio" ng-model="scenario" ng-change='changeScenario()' value="5" />
+        Lateral Out
+    </label>
+    <br>
+    <label style="font-weight: normal; word-wrap: break-word;min-width: 140px;max-width: 140px;">
+        <input type="radio" ng-model="scenario" ng-change='changeScenario()' value="6" />
+        Partial Lateral Out
+    </label>
+    <br>
+    <label style="font-weight: normal; word-wrap: break-word;min-width: 140px;max-width: 140px; padding-bottom: 10px;">
+        <input type="radio" ng-model="scenario" ng-change='changeScenario()' value="7" />
+        Meter Read Load
+    </label>
+    </div><!-- /input-group -->
+    </div>
+  </td>
+      <td>
+        <br>
+        <br>
+        <!-- <div class="spinner" ng-show="loading"></div> -->
+        <div class="form-group">
+            <!-- <a class="btn btn-default btn-call-action" title="Run Data Update" ng-click="runDataUpdate()" ng-disabled="buttons_disabled">Run Data Update</a> -->
+            <a class="btn btn-default btn-call-action" title="Run Data Update" ng-click="runDataUpdate()">Run Data Update</a>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-default btn-call-action-2" title="Run Scenario" ng-click="runScenario()" ng-disabled="buttons_disabled">Run Scenario</button>
+        </div>
+
+      </td>
+    </tr>
+</table>
+
+<br/>
+
+
+</div>
+
+</div>

@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="styles/approachb.css">
+
+<div class="new_container">
+
+<div class="header">
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a ng-href="#/approach1">One Issue<span class="sr-only">(current)</span></a></li>
+        <li><a ng-href="#/approach12">2% Issues</a></li>
+        <li><a ng-href="#/approach130">30% Issues</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ng-href="#/approach2">Approach 2</a></li>
+        <li><a ng-href="#/approach1">Reset</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+
+<!-- <div class="header">
+  <div class="navbar-default" role="navigation">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+        <ul class="nav navbar-nav">
+          <li><a ng-href="#/approach1">One Issue</a></li>
+          <li><a ng-href="#/approach12">2% Issues</a></li>
+          <li><a ng-href="#/approach130">30% Issues</a></li>
+          <li><a align="right" ng-href="#/approach2">Approach 2</a></li>
+        </ul>
+      </div>
+      <div>
+    </div>
+  </div>
+</div>
+</div> -->
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-4 colmd" style="height:100%; ">
+      <div class="background-cards">
+        <ui-gmap-google-map center='map.center' zoom='map.zoom' options="map.options">
+          <ui-gmap-layer namespace="visualization" type="HeatmapLayer" show="map.showHeat" onCreated="map.heatLayerCallback"></ui-gmap-layer>
+        </ui-gmap-google-map>
+      </div>
+  </div>
+  <div class="col-md-4 colmd" style="height:100%;">
+      <div class="background-cards">
+        <ui-gmap-google-map center='map2.center' zoom='map2.zoom'  options="map.options">
+          <ui-gmap-layer namespace="visualization" type="HeatmapLayer" show="map2.showHeat" onCreated="map2.heatLayerCallback"></ui-gmap-layer>
+        </ui-gmap-google-map>
+      </div>
+  </div>
+  <div class="col-md-4 colmd" style="height:100%;">
+      <div class="background-cards">
+        <ui-gmap-google-map center='map3.center' zoom='map3.zoom' options="map.options">
+          <ui-gmap-layer namespace="visualization" type="HeatmapLayer" show="map3.showHeat" onCreated="map3.heatLayerCallback"></ui-gmap-layer>
+        </ui-gmap-google-map>
+      </div>
+  </div>
+
+
+</div>
+
+<div class="row">
+<div class="col-md-4 colmd" style="height:100%;">
+    <div class="background-cards">
+      <ui-gmap-google-map center='map.center' zoom='map.zoom' options="map.options">
+        <!-- <ui-gmap-layer namespace="visualization" type="HeatmapLayer" show="map.showHeat" onCreated="map.heatLayerCallback"></ui-gmap-layer> -->
+        <ui-gmap-circle ng-repeat="c in map.circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
+      events="c.events" visible="c.visible" geodesic="c.geodesic"
+      editable="c.editable" draggable="c.draggable" clickable="c.clickable">
+  </ui-gmap-circle>
+      </ui-gmap-google-map>
+    </div>
+</div>
+<div class="col-md-4 colmd" style="height:100%;">
+    <div class="background-cards">
+      <ui-gmap-google-map center='map2.center' zoom='map2.zoom'  options="map.options">
+        <!-- <ui-gmap-layer namespace="visualization" type="HeatmapLayer" show="map.showHeat" onCreated="map.heatLayerCallback"></ui-gmap-layer> -->
+        <ui-gmap-circle ng-repeat="c in map2.circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
+      events="c.events" visible="c.visible" geodesic="c.geodesic"
+      editable="c.editable" draggable="c.draggable" clickable="c.clickable">
+  </ui-gmap-circle>
+      </ui-gmap-google-map>
+    </div>
+</div>
+<div class="col-md-4 colmd" style="height:100%;">
+    <div class="background-cards">
+      <ui-gmap-google-map center='map3.center' zoom='map3.zoom' options="map.options">
+        <!-- <ui-gmap-layer namespace="visualization" type="HeatmapLayer" show="map.showHeat" onCreated="map.heatLayerCallback"></ui-gmap-layer> -->
+        <ui-gmap-circle ng-repeat="c in map3.circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
+      events="c.events" visible="c.visible" geodesic="c.geodesic"
+      editable="c.editable" draggable="c.draggable" clickable="c.clickable">
+  </ui-gmap-circle>
+      </ui-gmap-google-map>
+    </div>
+</div>
+</div>
+</div>
